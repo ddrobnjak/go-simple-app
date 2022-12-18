@@ -25,10 +25,10 @@ pipeline {
                 sh 'ls -l'
             }
         }
-        post {
-            success {
-                archiveArtifacts artifacts: '/', followSymlinks: false
-        } 
-    }       
+    }
+    post {
+        success {
+            archiveArtifacts artifacts: '/', followSymlinks: false 
+        }
     }
 }
