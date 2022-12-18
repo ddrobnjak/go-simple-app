@@ -28,7 +28,7 @@ pipeline {
     }
     post {
         success {
-            archiveArtifacts artifacts: '/', followSymlinks: false 
+            archiveArtifacts artifacts: 'my-go-app', followSymlinks: false 
         }
     }
 }
