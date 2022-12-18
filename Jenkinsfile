@@ -21,10 +21,14 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'go build -x main.go'
+                sh 'go build -o my-go-app main.go'
                 sh 'ls -l'
             }
         }
-        
+        post {
+            success {
+                archiveArtifacts artifacts: '/', followSymlinks: false
+        } 
+    }       
     }
 }
